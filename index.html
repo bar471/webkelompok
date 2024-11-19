@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Business</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<body>
+    <!-- Navigasi -->
+    <nav>
+        <div class="logo">
+            
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#catalog">Catalog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a id="tagihanBtn" href="#invoice">Tagihan</a></li>
+            <li><a id="loginBtn">Admin</a></li>
+        </ul>
+    </nav>
+
+
+    <header id="home">
+        <div class="header-content">
+            <img src="https://pic.surf/gc" alt="Logo" class="logodepan">
+            <p>Rasakan ketenangan sejati dengan kopi, makanan, dan camilan lezat yang memanjakan di setiap momen Anda.</p>            </p>
+            <button class="cta-btn" onclick="scrollToAbout()">Selengkapnya >></button>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://pic.surf/7q" alt="Logo" class="logos">
+            </div>
+            <div class="about-text">
+                <h2>Tentang Kami ?</h2>
+                <p>Kami percaya pada kenikmatan sederhana dalam hidup — secangkir kopi yang nikmat, kue pastry yang hangat, dan suasana yang menyambut. Perjalanan kami dimulai dengan impian untuk menciptakan ruang di mana orang-orang dapat terhubung, bersantai, dan menikmati minuman berkualitas tinggi serta makanan rumahan yang lezat. Dari cangkir pertama yang diseduh hingga saat ini, kami terus berfokus pada pemilihan biji kopi terbaik dan bahan-bahan berkualitas untuk memberikan pengalaman yang benar-benar berkesan. Bergabunglah dengan kami untuk menikmati secangkir kehangatan dan kenyamanan setiap harinya.</p>
+            </div>
+        </div>
+    </section>
+    
+
+ 
+    <section id="catalog">
+        <h2>Pilih Menu</h2>
+        <div class="catalog-grid">
+            <div class="catalog-item">
+                <img src="https://pic.surf/v4g" alt="Product 1">
+                <h3>Coffee</h3>
+                <button id="btcoffe" onclick="showPopup('coffee', event)" aria-label="Show Coffee Menu">Lihat</button>
+            </div>
+            <div class="catalog-item">
+                <img src="https://pic.surf/t9r" alt="Product 2">
+                <h3>Non-Coffee</h3>
+                <button id="btnoncoffe" onclick="showPopup('noncoffee', event)">Lihat</button>
+            </div>
+            <div class="catalog-item">
+                <img src="https://pic.surf/7vn" alt="Product 3">
+                <h3>Food & Snack</h3>
+                <button id="btfoodsnack" onclick="showPopup('foodsnack', event)">Lihat</button>
+            </div>
+            <div class="catalog-item">
+                <img src="https://pic.surf/z8r" alt="Product 4">
+                <h3>Breakfast</h3>
+                <button id="btbreakfast" onclick="showPopup('breakfast', event)">Lihat</button>
+
+            </div>
+            <div class="catalog-item">
+                <img src="https://pic.surf/v4g" alt="Product 5">
+                <h3>Signature</h3>
+                <button id="btsignature" onclick="showPopup('signature'. event)">Lihat</button>
+            </div>
+        </div>
+    </section>
+    
+  
+   
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">×</span>
+            <h3 id="popup-title"></h3>
+            <p id="popup-description"></p>
+            <ul id="popup-menu-items"></ul>
+        </div>
+    </div>
+    
+    
+  
+
+    <div id="tagihanPopup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closeTagihanPopup()">×</span>
+            <h3>Detail Tagihan</h3>
+            <p>Berikut adalah detail pembayaran Anda:</p>
+            <table>
+                <tr>
+                    <td>Item</td>
+                    <td> Produk 1</td>
+                </tr>
+                <tr>
+                    <td>Jumlah</td>
+                    <td> 2</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td> Rp 300.000</td>
+                </tr>
+            </table>
+            <button class="co">checkout
+            </button>
+        </div>
+    </div>
+
+    
+
+
+
+    
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <label for="adminUsername">Username:</label>
+                <input type="text" id="adminUsername" name="username" required><br><br>
+                <label for="adminPassword">Password:</label>
+                <input type="password" id="adminPassword" name="password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div id="contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Whastapp</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">TropicalTwist@gmail.com</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
